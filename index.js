@@ -6,7 +6,10 @@ const server = jsonServer.create()
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults()
 
-app.use(cors());
+server.use(cors({
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 server.use(jsonServer.bodyParser)
 server.use(middlewares)
 server.use((req, res, next) => {
