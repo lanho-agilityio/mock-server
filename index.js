@@ -6,14 +6,14 @@ const server = jsonServer.create()
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults()
 
-app.use(cors({
-    origin: '*',
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}));
+app.use(cors());
 server.use(jsonServer.bodyParser)
 server.use(middlewares)
-server.use(router)
-
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
+    res.header('Access-Control-Allow-Headers', '*')
+    next()
+  })
 const PORT = 8000
 
 server.listen(PORT, () => {
