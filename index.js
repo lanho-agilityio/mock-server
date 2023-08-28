@@ -7,8 +7,12 @@ const server = express()
 const middlewares = jsonServer.defaults()
 
 server.use(cors())
+server.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 server.use(jsonServer.bodyParser)
-server.use('/api', jsonServer.router('db.json'));
+server.use('/api', jsonServer.router('/tmp/db.json'));
 server.use(middlewares)
 const PORT = 8000
 
