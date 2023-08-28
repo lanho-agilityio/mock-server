@@ -4,23 +4,9 @@ const path = require('path')
 const express = require('express')
 
 const server = express()
-// const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults()
 
-server.use(
-  cors({
-      origin: true,
-      credentials: true,
-      preflightContinue: false,
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  })
-);
-server.options('*', cors());
-server.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+server.use(cors())
 server.use(jsonServer.bodyParser)
 server.use('/api', jsonServer.router('db.json'));
 server.use(middlewares)
