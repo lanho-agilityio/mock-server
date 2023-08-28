@@ -1,9 +1,10 @@
 const jsonServer = require('json-server')
 const cors = require('cors')
 const path = require('path')
+const express = require('express')
 
-const server = jsonServer.create()
-const router = jsonServer.router(path.join(__dirname, 'db.json'))
+const server = express()
+// const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults()
 
 server.use(
@@ -16,8 +17,8 @@ server.use(
 );
 server.options('*', cors());
 server.use(jsonServer.bodyParser)
+server.use('/api', jsonServer.router('db.json'));
 server.use(middlewares)
-server.use(router)
 const PORT = 8000
 
 server.listen(PORT, () => {
