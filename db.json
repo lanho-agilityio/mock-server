@@ -4,6 +4,11 @@
       "username": "Lan",
       "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
       "id": "32508d70-b89f-4512-92df-fe47e3633db1"
+    },
+    {
+      "username": "Test",
+      "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "id": "1"
     }
   ],
   "posts": [
@@ -39,6 +44,34 @@
       "id": "1695719151380",
       "userId": "32508d70-b89f-4512-92df-fe47e3633db1",
       "title": "21212",
+      "content": "13133",
+      "imageBase64": "",
+      "imageName": "",
+      "tag": {
+        "id": "2",
+        "value": "Technology",
+        "color": "#10d97f"
+      },
+      "updatedAt": "2023-09-26T09:05:51.380Z"
+    },
+    {
+      "id": "2",
+      "userId": "32508d70-b89f-4512-92df-fe47e3633db1",
+      "title": "Test",
+      "content": "13133",
+      "imageBase64": "",
+      "imageName": "",
+      "tag": {
+        "id": "2",
+        "value": "Technology",
+        "color": "#10d97f"
+      },
+      "updatedAt": "2023-09-26T09:05:51.380Z"
+    },
+    {
+      "id": "123",
+      "userId": "1",
+      "title": "Test",
       "content": "13133",
       "imageBase64": "",
       "imageName": "",
